@@ -1,7 +1,6 @@
 // Get inputs value
 const titleInput = document.querySelector('.title-value');
 const authorInput = document.querySelector('.author-value');
-console.log(titleInput, authorInput);
 
 let booksObject = [];
 
@@ -11,10 +10,10 @@ const populateHTML = (books) => {
     booksContainer.innerHTML = '';
     books.forEach(book => {
         booksContainer.innerHTML += `
-            <div class="book">
+            <div class="book" id="book${book.id}">
                 <p class="title">${book.title}</p>
                 <p class="author">${book.author}</p>
-                <button type="button" class="remove-btn">Remove</button>
+                <button type="button" class="remove-btn" id="${book.id}">Remove</button>
                 <hr/>
             </div>
             `;
@@ -24,11 +23,12 @@ const populateHTML = (books) => {
 
 populateHTML(booksObject);
 
-// // Add event listener to button
+// Add event listener to button
 document.getElementsByClassName('add-books')[0].addEventListener('click', function() {
     booksObject.push({
         title: titleInput.value,
-        author: authorInput.value
+        author: authorInput.value,
+        id: booksObject.length + 1,
     });
     // Clear the input fields
     titleInput.value = '';
@@ -42,3 +42,16 @@ document.getElementsByClassName('add-books')[0].addEventListener('click', functi
     // Populate the HTML with the new books
     populateHTML(booksObject);
 });
+
+// Add event listener to each remove button
+document.getElementsByClassName('books')[0].addEventListener('click', function(e) {
+    if (e.target.classList.contains('remove-btn')) {
+        const book = e.target.parentElement;
+        book.remove();
+        // Remove the book from the books object
+        booksObject = booksObject.filter(b => b.title !== book.querySelector('.title').textContent);
+        // Add books object to local storage
+        localStorage.setItem('books', JSON.stringify(booksObject));
+    }
+});
+
