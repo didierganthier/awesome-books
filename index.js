@@ -6,10 +6,10 @@ let booksObject = [];
 
 // Get the books from the local storage
 const getBooks = () => {
-    const books = JSON.parse(localStorage.getItem('books'));
-    if (books) {
-        booksObject = books;
-    }
+  const books = JSON.parse(localStorage.getItem('books'));
+  if (books) {
+    booksObject = books;
+  }
 };
 
 getBooks();
