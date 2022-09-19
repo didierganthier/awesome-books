@@ -4,6 +4,16 @@ const authorInput = document.querySelector('.author-value');
 
 let booksObject = [];
 
+// Get the books from the local storage
+const getBooks = () => {
+    const books = JSON.parse(localStorage.getItem('books'));
+    if (books) {
+        booksObject = books;
+    }
+};
+
+getBooks();
+
 // Pouplate the HTML with the books
 const populateHTML = (books) => {
   const booksContainer = document.createElement('div');
