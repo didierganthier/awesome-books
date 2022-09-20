@@ -1,66 +1,61 @@
-// Get inputs value
+class Book {
+  constructor(title, author, add, remove) {
+    this.title = title;
+    this.author = author;
+    this.add = add;
+    this.remove = remove;
+  }
+
+  addBook() {
+    const books = JSON.parse(localStorage.getItem('books')) || [];
+    books.push(this);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  removeBook() {
+    const books = JSON.parse(localStorage.getItem('books')) || [];
+    const filteredBooks = books.filter((book) => book.title !== this.title);
+    localStorage.setItem('books', JSON.stringify(filteredBooks));
+  }
+}
+
 const titleInput = document.querySelector('.title-value');
 const authorInput = document.querySelector('.author-value');
 
-let booksObject = [];
-
-// Get the books from the local storage
-const getBooks = () => {
-  const books = JSON.parse(localStorage.getItem('books'));
-  if (books) {
-    booksObject = books;
-  }
-};
-
-getBooks();
-
-// Pouplate the HTML with the books
-const populateHTML = (books) => {
-  const booksContainer = document.createElement('div');
+const displayBooks = () => {
+  const books = JSON.parse(localStorage.getItem('books')) || [];
+  const booksContainer = document.querySelector('.books');
   booksContainer.innerHTML = '';
   books.forEach((book) => {
     booksContainer.innerHTML += `
-            <div class="book" id="book${book.id}">
-                <p class="title">${book.title}</p>
-                <p class="author">${book.author}</p>
-                <button type="button" class="remove-btn" id="${book.id}">Remove</button>
-                <hr/>
-            </div>
-            `;
+      <div class="book">
+        <p class="title">${book.title}</p>
+        <p class="author">${book.author}</p>
+        <button type="button" class="remove-btn">Remove</button>
+        <hr/>
+      </div>
+    `;
   });
-  document.querySelector('.books').appendChild(booksContainer);
 };
 
-populateHTML(booksObject);
-
-// Add event listener to button
-document.getElementsByClassName('add-books')[0].addEventListener('click', () => {
-  booksObject.push({
-    title: titleInput.value,
-    author: authorInput.value,
-    id: booksObject.length + 1,
-  });
-  // Clear the input fields
+const addBook = () => {
+  const book = new Book(titleInput.value, authorInput.value);
+  book.addBook();
   titleInput.value = '';
   authorInput.value = '';
+  displayBooks();
+};
 
-  // Add books object to local storage
-  localStorage.setItem('books', JSON.stringify(booksObject));
-
-  // Clear the books container
-  document.querySelector('.books').innerHTML = '';
-  // Populate the HTML with the new books
-  populateHTML(booksObject);
-});
-
-// Add event listener to each remove button
-document.getElementsByClassName('books')[0].addEventListener('click', (e) => {
+const removeBook = (e) => {
   if (e.target.classList.contains('remove-btn')) {
     const book = e.target.parentElement;
+    const bookToRemove = new Book(book.querySelector('.title').textContent);
+    bookToRemove.removeBook();
     book.remove();
-    // Remove the book from the books object
-    booksObject = booksObject.filter((b) => b.title !== book.querySelector('.title').textContent);
-    // Add books object to local storage
-    localStorage.setItem('books', JSON.stringify(booksObject));
   }
-});
+};
+
+document.querySelector('.add-books').addEventListener('click', addBook);
+document.querySelector('.books').addEventListener('click', removeBook);
+
+displayBooks();
