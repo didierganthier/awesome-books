@@ -34,7 +34,9 @@ h1 {
   flex-direction: row;
 }
 
-.title, .author {
+.title,
+.author,
+span {
   margin: 0.5rem;
 }
 
@@ -59,7 +61,7 @@ h1 {
 }
 
 .add-books {
-  margin-left: 8.5rem;
+  margin-left: 7rem;
 }
 
 input {
