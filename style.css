@@ -2,6 +2,68 @@ body {
   background-color: #fff;
 }
 
+/** HEADER */
+h1 {
+  text-align: center;
+  font-weight: 700;
+}
+
+/** BOOKS LIST */
+
+/* Books Container */
+.books {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 2px solid #000;
+  margin: 2rem 0;
+}
+
+/* Book Row */
+.book {
+  display: flex;
+  background: #d4d4d4;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.title,
+.author,
+span {
+  margin: 0.5rem;
+}
+
+.remove-btn {
+  height: 50%;
+  align-self: center;
+  margin: 0 1rem 0 0.5rem;
+}
+
+/** CREATE BOOK */
+.create-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.add-book-title {
+  text-align: center;
+  font-weight: 700;
+}
+
+.add-books {
+  margin-left: 7rem;
+}
+
 input {
   display: block;
   margin: 0.5rem 0;
