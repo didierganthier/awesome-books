@@ -46,7 +46,7 @@ To get a local copy up and running follow these simple example steps.
 
 - GitHub: [@Javivy](https://github.com/Javivy)
 - Twitter: [@Javivy_2803](https://twitter.com/Javivy_2803)
-- LinkedIn: [Javier Vargas]https://www.linkedin.com/in/javier-alejandro-vargas-ortega/)
+- LinkedIn: [Javier Vargas](https://www.linkedin.com/in/javier-alejandro-vargas-ortega/)
 
 ## 🤝 Contributing
 
