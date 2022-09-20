@@ -29,10 +29,11 @@ const displayBooks = () => {
   books.forEach((book) => {
     booksContainer.innerHTML += `
       <div class="book">
-        <p class="title">${book.title}</p>
-        <p class="author">${book.author}</p>
+        <div class="data-container">
+          <p class="title">${book.title}</p>
+          <p class="author">${book.author}</p>
+        </div>
         <button type="button" class="remove-btn">Remove</button>
-        <hr/>
       </div>
     `;
   });
