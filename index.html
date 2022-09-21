@@ -8,15 +8,39 @@
     <title>Awesome Books</title>
 </head>
 <body>
-    <h1>All awesome Books</h1>
+    <header>
+        <nav class="navbar">
+            <h1>All awesome Books</h1>
+            <ul>
+                <li id="list-book"><a href="#">List</a></li> |
+                <li id="add-new"><a href="#">Add New</a></li> |
+                <li id="contact"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <span class="date"></span>
+    </header>
     <div class="books"></div>
-    <hr>
+    <div class="content"></div>
     <div class="create-book">
         <h2 class="add-book-title">Add a new book</h2>
         <input type="text" placeholder="Title" class="title-value" required>
         <input type="text" placeholder="Author" class="author-value" required>
         <input type="submit" class="add-books" value="Add">
     </div>
+    <div class="contact">
+        <h2 class="contact-title">Contact Us</h2>
+        <p class="contact-info">Do you have any questions or you just want to say "Hello"?</p> 
+        <p class="call-to-action">You can reach out to us!</p>
+        <ul class="contact-list">
+            <li class="contact-item">Our Email: <a href="mailto:mail.com">mail.com</a></li>
+            <li class="contact-item">Our Phone Number: <a href="tel:+1234567890">+1234567890</a></li>
+            <li class="contact-item">Our Address: 123 Awesome Street, Awesome City</li>
+        </ul>
+    </div>
+    <!--* FOOTER -->
+    <footer>
+        <p>&copy;Copyright, website made by Didier Ganthier and Javier Vargas, all rights reserved</p>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>

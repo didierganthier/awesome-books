@@ -1,11 +1,54 @@
 body {
   background-color: #fff;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 18% auto 10%;
+  align-content: space-between;
+  overflow-y: hidden;
 }
 
 /** HEADER */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border: 3px solid #000;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-self: center;
+}
+
+li {
+  margin: 0 0.5rem;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #247bfd;
+}
+
+a:focus {
+  color: #247bfd;
+}
+
 h1 {
   text-align: center;
   font-weight: 700;
+}
+
+.date {
+  margin: 1rem;
+  font-weight: 700;
+  float: right;
+  align-self: flex-end;
 }
 
 /** BOOKS LIST */
@@ -18,7 +61,7 @@ h1 {
   align-items: center;
   width: 100%;
   border: 2px solid #000;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 /* Book Row */
@@ -52,7 +95,23 @@ span {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 1rem 0;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 1rem 0;
 }
 
 .add-book-title {
@@ -67,4 +126,21 @@ span {
 input {
   display: block;
   margin: 0.5rem 0;
+}
+
+/** CONTENT */
+.content {
+  display: none;
+}
+
+/** FOOTER */
+footer {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  border: 3px solid #000;
+  justify-self: flex-end;
+  align-items: center;
+  width: 99%;
+  margin-bottom: 1rem;
 }
