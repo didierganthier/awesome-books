@@ -1,9 +1,10 @@
 body {
   background-color: #fff;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 18% auto 10%;
+  align-content: space-between;
   overflow-y: hidden;
 }
 
@@ -127,6 +128,11 @@ input {
   margin: 0.5rem 0;
 }
 
+/** CONTENT */
+.content {
+  display: none;
+}
+
 /** FOOTER */
 footer {
   display: flex;
@@ -134,5 +140,7 @@ footer {
   font-weight: 700;
   border: 3px solid #000;
   justify-self: flex-end;
+  align-items: center;
   width: 99%;
+  margin-bottom: 1rem;
 }
