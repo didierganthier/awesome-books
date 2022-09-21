@@ -8,7 +8,15 @@
     <title>Awesome Books</title>
 </head>
 <body>
-    <h1>All awesome Books</h1>
+    <nav class="navbar">
+        <h1>All awesome Books</h1>
+        <ul>
+            <li><a href="#">List</a></li> |
+            <li><a href="#">Add New</a></li> |
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <span class="date"></span>
     <div class="books"></div>
     <hr>
     <div class="create-book">
@@ -17,6 +25,11 @@
         <input type="text" placeholder="Author" class="author-value" required>
         <input type="submit" class="add-books" value="Add">
     </div>
+
+    <!--* FOOTER -->
+    <footer>
+        <p>&copy;Copyright, website made by Didier Ganthier and Javier Vargas, all rights reserved</p>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>

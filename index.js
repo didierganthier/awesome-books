@@ -19,6 +19,9 @@ class Book {
 
 const titleInput = document.querySelector('.title-value');
 const authorInput = document.querySelector('.author-value');
+const dateSpan = document.querySelector('.date');
+
+dateSpan.textContent = new Date();
 
 const displayBooks = () => {
   const books = JSON.parse(localStorage.getItem('books')) || [];
