@@ -97,6 +97,22 @@ span {
   margin: 1rem 0;
 }
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
 .add-book-title {
   text-align: center;
   font-weight: 700;
